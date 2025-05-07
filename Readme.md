@@ -1,7 +1,7 @@
 # 📋 To-Do List Application
 
-![Скриншот To-Do приложения - light-theme](https://github.com/Sanya481/To-Do-List-Application/blob/main/public/images/screenshots/screenshot-light.png?raw=true) 
-![Скриншот To-Do приложения - dark-theme](https://github.com/Sanya481/To-Do-List-Application/blob/main/public/images/screenshots/screenshot-dark.png?raw=true)
+![Скриншот To-Do приложения - light-theme](https://github.com/Sanya481/To-Do-List-Application/blob/main/docs/images/screenshots/screenshot-light.png?raw=true) 
+![Скриншот To-Do приложения - dark-theme](https://github.com/Sanya481/To-Do-List-Application/blob/main/docs/images/screenshots/screenshot-dark.png?raw=true)
 
 Простое и удобное приложение для управления задачами с возможностью фильтрации, сортировки, массовых действий и переключения темы.
 
