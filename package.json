@@ -5,11 +5,11 @@
   "main": "src/js/index.js",
   "scripts": {
     "start": "npx live-server public --port=3000 --browser=chrome --mount=/src:./src",
-    "dev": "sass src/scss/main.scss public/style.css --watch --embed-source-map",
-    "build": "sass src/scss/main.scss public/style.css --style=compressed --no-source-map",
+    "dev": "sass src/scss/main.scss docs/style.css --watch --embed-source-map",
+    "build": "sass src/scss/main.scss docs/style.css --style=compressed --no-source-map && cp -R src/js docs/",
     "serve": "concurrently \"npm run dev\" \"npm run start\"",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d docs"
   },
   "keywords": [
     "todo",
