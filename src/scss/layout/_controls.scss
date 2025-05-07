@@ -1,0 +1,11 @@
+// Controls (layout for Filter buttons)
+.controls {
+  margin-bottom: var(--spacing-xl);
+
+  &__filters {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+}

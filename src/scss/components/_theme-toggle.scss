@@ -1,0 +1,80 @@
+@use "sass:math";
+
+// Переключатель темы
+.theme-toggle {
+  $size: 40px;
+  $icon-size: 18px;
+
+  position: relative;
+  display: inline-block;
+  width: $size;
+  height: math.div($size, 2); // Исправлено
+  border-radius: math.div($size, 2); // Исправлено
+  background: var(--color-light-gray);
+  cursor: pointer;
+  transition: background var(--transition-normal);
+
+  &:hover {
+    background: var(--color-primary-light);
+
+    .theme-toggle__icon {
+      opacity: 1;
+    }
+  }
+
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked+.theme-toggle__slider {
+      transform: translateX(math.div($size, 2)); // Исправлено
+      background: var(--color-dark);
+    }
+
+    &:focus-visible+.theme-toggle__slider {
+      box-shadow: 0 0 0 3px var(--color-primary-light);
+    }
+  }
+
+  &__slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: math.div($size, 2) - 4px; // Исправлено
+    height: math.div($size, 2) - 4px; // Исправлено
+    border-radius: 50%;
+    background: white;
+    transition: all var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  &__icon {
+    position: absolute;
+    width: $icon-size;
+    height: $icon-size;
+    transition: opacity var(--transition-fast);
+    opacity: 0.7;
+
+    &--sun {
+      left: 6px;
+      color: var(--color-warning);
+    }
+
+    &--moon {
+      right: 6px;
+      color: var(--color-text);
+    }
+  }
+
+  [data-theme="dark"] & {
+    background: var(--color-dark);
+
+    &__slider {
+      background: var(--color-light);
+    }
+  }
+}

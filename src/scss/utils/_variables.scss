@@ -1,0 +1,74 @@
+// Variables
+:root {
+  // Colors
+  --color-primary: #6366f1;
+  --color-primary-light: #818cf8;
+  --color-primary-dark: #4f46e5;
+  --color-secondary: #8b5cf6;
+  --color-accent: #ec4899;
+  --color-light: #f8fafc;
+  --color-light-gray: #e2e8f0;
+  --color-dark: #1e293b;
+  --color-text: #334155;
+  --color-text-light: #64748b;
+  --color-error: #ef4444;
+  --color-success: #10b981;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f8fafc;
+
+  --color-primary-rgb: 99, 102, 241;
+  --color-accent-rgb: 236, 72, 153;
+  --color-error-rgb: 239, 68, 68;
+
+  // Spacing
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  // Border radius
+  --border-radius-sm: 6px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 14px;
+
+  // Shadows
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  // Transitions
+  --transition-fast: 0.15s;
+  --transition-normal: 0.3s;
+  --transition-slow: 0.5s;
+
+  // Theme toggle
+  --color-warning: #f59e0b; // Для солнечной иконки  
+  --toggle-size: 40px; // Размер переключателя
+}
+
+[data-theme="dark"] {
+  --color-surface: #1a1e28;
+  --color-surface-secondary: #252b3a;
+  --color-light: #2d3445;
+  --color-light-gray: #3a4558;
+  --color-text: #e2e8f0;
+  --color-text-light: #94a3b8;
+  --color-text-lighter: #64748b;
+
+  /* Тени для тёмной темы */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.8);
+
+  /* Акцентные цвета для тёмной темы */
+  --color-primary: #7dd3fc;
+  --color-primary-dark: #38bdf8;
+  --color-secondary: #a78bfa;
+}
+
+// * Простое правило:
+// ? $var — для «внутренней кухни» (миксины, функции, расчёты).
+// ? --var — для «внешних» стилей (темы, анимации, изменения через JS).

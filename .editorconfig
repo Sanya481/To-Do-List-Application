@@ -1,0 +1,23 @@
+# Файл с настройками для редактора.
+#
+# Если вы разрабатываете в редакторе WebStorm, BBEdit, Coda или SourceLair
+# этот файл уже поддерживается и не нужно производить никаких дополнительных
+# действий.
+#
+# Если вы ведёте разработку в другом редакторе, зайдите
+# на https://editorconfig.org и в разделе «Download a Plugin»
+# скачайте дополнение для вашего редактора.
+
+root = true
+
+[*]  # Настройки для всех файлов
+charset = utf-8 # Кодировка
+end_of_line = lf # Символы переноса строк (Unix-style)
+indent_size = 2 # 2 пробела на уровень
+tab_width = 2 
+indent_style = space # Использовать пробелы вместо табов
+insert_final_newline = true # Пустая строка в конце файла
+trim_trailing_whitespace = true # Удаление пробелов в конце строк
+
+[*.md] # Особые правила для Markdown
+trim_trailing_whitespace = false # Сохранять пробелы в MD

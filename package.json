@@ -1,0 +1,27 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "To-Do List App with sorting and filtering",
+  "main": "src/js/index.js",
+  "scripts": {
+    "start": "npx live-server public --port=3000 --browser=chrome --mount=/src:./src",
+    "dev": "sass src/scss/main.scss public/style.css --watch --embed-source-map",
+    "build": "sass src/scss/main.scss public/style.css --style=compressed --no-source-map",
+    "serve": "concurrently \"npm run dev\" \"npm run start\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public"
+  },
+  "keywords": [
+    "todo",
+    "productivity",
+    "app"
+  ],
+  "author": "Alexander",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "gh-pages": "^6.1.1",
+    "live-server": "^1.2.2",
+    "sass": "^1.87.0"
+  }
+}

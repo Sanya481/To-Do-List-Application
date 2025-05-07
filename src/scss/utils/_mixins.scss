@@ -1,0 +1,18 @@
+// Mixins
+@mixin focus-ring($color: var(--color-primary)) {
+  box-shadow: 0 0 0 3px rgba($color, 0.2);
+  outline: none;
+}
+
+@mixin hover-effect($shadow: var(--shadow-md)) {
+  transform: translateY(-2px);
+  box-shadow: $shadow;
+}
+
+@mixin button-reset {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}

@@ -1,0 +1,23 @@
+// Footer
+.footer {
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-light-gray);
+
+  &__stats {
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+    transition: all var(--transition-fast) ease;
+
+    &.updated {
+      transform: scale(1.05);
+      color: var(--color-primary);
+    }
+  }
+
+  &__credits {
+    opacity: 0.8;
+  }
+}

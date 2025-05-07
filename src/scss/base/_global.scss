@@ -1,0 +1,37 @@
+// Base styles
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-light);
+  color: var(--color-text);
+  line-height: 1.5;
+  padding: var(--spacing-md);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  // Для переключения темы светлая/тёмная
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  @media (max-width: 600px) {
+    padding: var(--spacing-sm);
+  }
+}
+
+// Для кнопок и других элементов
+[data-theme="dark"] {
+  .button:not(.task-item__delete) {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text);
+
+    &:hover {
+      background-color: var(--color-primary);
+    }
+  }
+}
+

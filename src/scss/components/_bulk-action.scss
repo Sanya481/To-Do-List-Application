@@ -1,0 +1,161 @@
+@use "../utils/mixins" as *;
+
+// Bulk actions
+.bulk-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+  width: 100%;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__button {
+    @include button-reset;
+    background-color: white;
+    border: 1px solid var(--color-light-gray);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    transition: all var(--transition-fast) ease;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-sm);
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+
+    position: relative;
+    z-index: 1;
+    transition:
+      all var(--transition-fast) ease,
+      box-shadow 0.2s ease;
+
+    // -------------------------------
+    // Responsive adjustments
+    // -------------------------------
+    @media (max-width: 600px) {
+      flex: 1 0 calc(50% - var(--spacing-sm));
+    }
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+
+    // Псевдоэлемент для градиентного эффекта
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--border-radius-md);
+      background: linear-gradient(135deg,
+          rgba(var(--color-primary-rgb), 0.1) 0%,
+          rgba(var(--color-light-rgb), 0.05) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    /* --------- Hover состояния --------- */
+    &:not(:disabled, [disabled]):hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+
+      &::before {
+        opacity: 1;
+      }
+
+      &.bulk-actions__button--complete {
+        color: var(--color-success);
+        border-color: color-mix(in srgb, var(--color-success) 30%, white);
+        background-color: color-mix(in srgb, var(--color-success) 10%, white);
+      }
+
+      &.bulk-actions__button--clear {
+        color: var(--color-error);
+        border-color: color-mix(in srgb, var(--color-error) 30%, white);
+        background-color: color-mix(in srgb, var(--color-error) 10%, white);
+      }
+    }
+
+    /* --------- Focus состояния --------- */
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+      box-shadow:
+        0 0 0 2px white,
+        0 0 0 4px var(--color-primary-light),
+        var(--shadow-md);
+
+      &::before {
+        opacity: 0.8;
+      }
+
+      // Специфичные стили для цветных кнопок
+      &.bulk-actions__button--complete {
+        box-shadow:
+          0 0 0 2px white,
+          0 0 0 4px color-mix(in srgb, var(--color-success) 70%, white),
+          var(--shadow-md);
+      }
+
+      &.bulk-actions__button--clear {
+        box-shadow:
+          0 0 0 2px white,
+          0 0 0 4px color-mix(in srgb, var(--color-error) 70%, white),
+          var(--shadow-md);
+      }
+    }
+
+    /* --------- Active состояния --------- */
+    &:active:not(:disabled, [disabled]) {
+      transform: scale(0.98);
+      transition: transform 0.1s ease;
+
+      &::before {
+        opacity: 0.5;
+      }
+    }
+
+    // Disabled состояния (оставляем как есть)
+    &:disabled,
+    &[disabled] {
+      cursor: not-allowed;
+      opacity: 0.6;
+
+      &:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm);
+        color: inherit;
+        border-color: var(--color-light-gray);
+        background-color: white;
+
+        &::before {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    font-weight: bold;
+  }
+
+  &__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+}
