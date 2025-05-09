@@ -9,3 +9,8 @@ export const getTasks = () => {
 export const setTasks = (newTasks) => {
   tasks = newTasks;
 };
+
+// Добавьте этот метод для отладки
+export const logTasks = () => {
+  console.log('Current tasks:', tasks)
+}

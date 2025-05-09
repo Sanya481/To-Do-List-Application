@@ -31,6 +31,10 @@
     border-radius: var(--border-radius-md);
   }
 
+  @media (max-width: 480px) {    
+    margin-top: var(--no-spacing);
+  }
+
   &:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
@@ -65,6 +69,10 @@
   .app {
     background-color: var(--color-surface);
     border: 1px solid var(--color-light-gray);
+
+    @media (max-width: 480px) {
+      border: var(--no-spacing);
+    }
 
     /* Градиент для тёмной темы */
     &::before {

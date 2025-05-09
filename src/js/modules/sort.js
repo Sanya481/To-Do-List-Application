@@ -1,4 +1,4 @@
-import { getTasks } from "./state.js";
+import { getTasks, setTasks } from "./state.js";
 import { renderTasks } from "./render.js";
 
 // // -------------------------------
@@ -45,20 +45,20 @@ const onEscClickDropdown = (event) => {
 const applySortOption = (optionElement) => {
   const typeSort = optionElement.dataset.sort
 
-  const currentTasks = getTasks()
-
+  const currentTasks = getTasks()// Берём исходные задачи
   // Создаем копию массива, чтобы не мутировать исходные данные
+  
   const sortedTasks = [...currentTasks]
 
   switch (typeSort) {
     case 'date-asc': // Новые сначала
-    sortedTasks.sort((a, b) => new Date(a.date) - new Date(b.date))
+      sortedTasks.sort((a, b) => new Date(a.date) - new Date(b.date))
       break
     case 'date-desc': // Старые сначала
-    sortedTasks.sort((a, b) => new Date(b.date) - new Date(a.date))
+      sortedTasks.sort((a, b) => new Date(b.date) - new Date(a.date))
       break
     case 'text-asc': // А-Я
-    sortedTasks.sort((a, b) => a.text.localeCompare(b.text,
+      sortedTasks.sort((a, b) => a.text.localeCompare(b.text,
         undefined,  // Определяет язык для сортировки (например 'ru' для русского)
         {
           sensitivity: "base", //  игнорирует регистр и акценты (á = a = A)
@@ -66,11 +66,12 @@ const applySortOption = (optionElement) => {
         }))
       break
     case 'text-desc': // Я-А
-    sortedTasks.sort((a, b) => b.text.toLowerCase().localeCompare(a.text.toLowerCase()))
+      sortedTasks.sort((a, b) => b.text.toLowerCase().localeCompare(a.text.toLowerCase()))
       break
   }
-
-  renderTasks(sortedTasks);
+  
+  setTasks(sortedTasks) // Сохраняем отсортированный массив
+  renderTasks(sortedTasks) // Рендерим отсортированный список
 }
 
 // ограничение навигацию с клавиатуры внутри выпадающего списка сортировки
@@ -131,4 +132,4 @@ const initSortTasks = () => {
   })
 }
 
-export {initSortTasks}
+export { initSortTasks }

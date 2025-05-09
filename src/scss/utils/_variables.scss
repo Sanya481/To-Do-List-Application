@@ -8,9 +8,11 @@
   --color-accent: #ec4899;
   --color-light: #f8fafc;
   --color-light-gray: #e2e8f0;
+  --color-light-gray-2: #cdd3d9;
   --color-dark: #1e293b;
   --color-text: #334155;
   --color-text-light: #64748b;
+  --color-orange:#ff9966;
   --color-error: #ef4444;
   --color-success: #10b981;
   --color-surface: #ffffff;
@@ -20,7 +22,11 @@
   --color-accent-rgb: 236, 72, 153;
   --color-error-rgb: 239, 68, 68;
 
+  // linear-gradient
+  --fruit-mix: linear-gradient(135deg, #fff2e6 0%, #ffe6f2 50%, #f0e6ff 100%);
+
   // Spacing
+  --no-spacing: 0;
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;

@@ -6,7 +6,7 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--color-light);
+  background-color: var(--color-light-gray-2);
   color: var(--color-text);
   line-height: 1.5;
   padding: var(--spacing-md);
@@ -21,6 +21,10 @@ body {
   @media (max-width: 600px) {
     padding: var(--spacing-sm);
   }
+
+  @media (max-width: 480px) {
+    padding: var(--no-spacing);
+  }
 }
 
 // Для кнопок и других элементов
@@ -34,4 +38,3 @@ body {
     }
   }
 }
-
